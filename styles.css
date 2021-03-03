@@ -1,0 +1,22 @@
+body {
+  font-family: sans-serif;
+  background-color: #fff;
+  text-align: center;
+}
+#card {
+  font-size: 300px;
+}
+.button {
+  cursor: pointer;
+  background-color: grey;
+  border: none;
+  padding: 20px 40px;
+  border-radius: 8px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+.button:focus {
+  outline: none;
+}
