@@ -1,9 +1,23 @@
-const suits = [ 'SPADES', 'DIAMONDS', 'HEARTS', 'CLUBS'];
+const suits = ['SPADES', 'DIAMONDS', 'HEARTS', 'CLUBS'];
 const values = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
 
 export default class Deck {
     constructor(cards) {
         this.cards = newDeck();
+    }
+    
+    get numberOfCards() {
+        return this.cards.length
+    }
+    
+    shuffle() {
+        let j, temp;
+        for (let i = this.numberOfCards - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * i);
+            temp = this.cards[i];
+            this.cards[i] = this.cards[j];
+            this.cards[j] = temp;
+        }
     }
 }
 
@@ -20,7 +34,7 @@ class Card {
     }
     
     get name() {
-        if(this.value === "A"){
+        if(this.value === "A") {
             return "Ace";
         }
         if ((Number(this.value) > 1) && (Number(this.value) < 11)) {

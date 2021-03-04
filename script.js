@@ -6,6 +6,7 @@ import Deck from "./deck.js";
 
 const deck = new Deck();
 console.log(deck.cards);
+deck.shuffle();
 
 window.printCard=()=> {
     let random = Math.floor(Math.random() * 52);
