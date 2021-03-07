@@ -1,15 +1,15 @@
 const suits = ['SPADES', 'DIAMONDS', 'HEARTS', 'CLUBS'];
-const values = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
+const values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 
 export default class Deck {
     constructor(cards) {
         this.cards = newDeck();
     }
-    
+
     get numberOfCards() {
         return this.cards.length
     }
-    
+
     shuffle() {
         let j, temp;
         for (let i = this.numberOfCards - 1; i > 0; i--) {
@@ -26,15 +26,15 @@ class Card {
         this.suit = suit;
         this.value = value;
     }
-    
+
     get color() {
-        if(this.suit === "SPADES" || this.suit === "CLUBS") {
+        if (this.suit === "SPADES" || this.suit === "CLUBS") {
             return "BLACK";
-        } else {return "RED";}
+        } else { return "RED"; }
     }
-    
+
     get name() {
-        if(this.value === "A") {
+        if (this.value === "A") {
             return "Ace";
         }
         if ((Number(this.value) > 1) && (Number(this.value) < 11)) {
@@ -80,7 +80,7 @@ class Card {
          * E   = King
          */
         for (let i = 0; i < values.length; i++) {
-            if(this.value === "A"){
+            if (this.value === "A") {
                 unicode = unicode + "1";
                 break;
             }
@@ -109,10 +109,10 @@ class Card {
     }
 }
 
-function newDeck() {    
+function newDeck() {
     let deck = [];
-    for(let i = 0; i < suits.length; i++) {
-        for(let j = 0; j < values.length; j++) {
+    for (let i = 0; i < suits.length; i++) {
+        for (let j = 0; j < values.length; j++) {
             let card = new Card(suits[i], values[j]);
             deck.push(card);
         }

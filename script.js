@@ -8,7 +8,7 @@ const deck = new Deck();
 console.log(deck.cards);
 deck.shuffle();
 
-window.printCard=()=> {
+window.printCard = () => {
     let random = Math.floor(Math.random() * 52);
     let aCard = deck.cards[random];
 
