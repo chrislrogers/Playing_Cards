@@ -30,7 +30,7 @@ class Card {
     get color() {
         if(this.suit === "SPADES" || this.suit === "CLUBS") {
             return "BLACK";
-        } else {return "RED"}
+        } else {return "RED";}
     }
     
     get name() {
