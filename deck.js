@@ -121,4 +121,4 @@ class Card {
         }
         return String.fromCodePoint(unicode);
     }
-} 
+}
