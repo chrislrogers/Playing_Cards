@@ -1,0 +1,23 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>War</title>
+</head>
+
+<body>
+  <h1>War!</h1>
+  <h3>Collect all of the opponent's cards to win.</h3>
+  <p id="Score_Line">CPU - <span class="score" id="CPU_Score">26</span><span id="lead"> = </span><span class="score" id="Player_Score">26</span> - You</p>
+  <p><span class="players" id="CPU_Deck">🂠</span><span class="players" id="CPU_Card">🂠</span></p>
+  <p class="players" id="draw">&nbsp;</p>
+  <p><span class="players" id="Player_Deck">🂠</span><span class="players" id="Player_Card">🂠</span></p>
+  <button id="clicker" class="button" onClick="advance()">Start</button>
+  <script type="module" src="war.js"></script>
+</body>
+
+</html>

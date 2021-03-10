@@ -2,8 +2,12 @@ const suits = ['SPADES', 'DIAMONDS', 'HEARTS', 'CLUBS'];
 const values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 
 export default class Deck {
-    constructor() {
-        this.cards = [];
+    constructor(cards) {
+        if (typeof cards != 'undefined') {
+            this.cards = cards;
+        } else {
+            this.cards = [];
+        }
     }
 
     newDeck() {
@@ -64,18 +68,18 @@ class Card {
     get unicode() {
         /**
          * SPADES   = 0x1F0A
-         * DIAMONDS = 0x1F0B
-         * HEARTS   = 0x1F0C
+         * HEARTS   = 0x1F0B
+         * DIAMONDS = 0x1F0C
          * CLUBS    = 0x1F0D
          */
         let unicode = "0x1F0";
         if (this.suit === "SPADES") {
             unicode = unicode + "A";
         }
-        if (this.suit === "DIAMONDS") {
+        if (this.suit === "HEARTS") {
             unicode = unicode + "B";
         }
-        if (this.suit === "HEARTS") {
+        if (this.suit === "DIAMONDS") {
             unicode = unicode + "C";
         }
         if (this.suit === "CLUBS") {

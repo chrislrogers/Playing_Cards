@@ -3,6 +3,9 @@ html, body {
   background-color: #fff;
   text-align: center;
 }
+p { 
+  margin:20px;
+}
 #card {
   font-size: 300px;
 }
@@ -19,4 +22,14 @@ html, body {
 }
 .button:focus {
   outline: none;
+}
+.players {
+  font-size: 100px;
+  line-height: 100%;
+}
+#Score_Line {
+  font-size: 30px;
+}
+.score {
+  color: blue;
 }
