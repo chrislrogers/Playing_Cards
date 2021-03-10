@@ -22,6 +22,7 @@ const CPU_Card = document.getElementById('CPU_Card');
 const Player_Score = document.getElementById('Player_Score');
 const Player_Card = document.getElementById('Player_Card');
 
+const Middle_Row = document.getElementById('draw');
 const button = document.getElementById('clicker');
 const lead = document.getElementById('lead');
 
@@ -65,18 +66,19 @@ function playRound() {
     
     Player_Card.innerHTML = playerCard.unicode;
     CPU_Card.innerHTML = cpuCard.unicode;
-    
+    Middle_Row.innerHTML = "&nbsp;";
+
     if (playerCard.color === "RED") {
         Player_Card.style.color = 'red';
     } else {
         Player_Card.style.color = 'black';
     }
+
     if (cpuCard.color === "RED") {
         CPU_Card.style.color = 'red';
     } else {
         CPU_Card.style.color = 'black';
     }
-
 
     if (cardValues[playerCard.name] > cardValues[cpuCard.name]) {
         playerDeck.cards.push(playerCard);
@@ -89,6 +91,7 @@ function playRound() {
         cpuDeck.cards = cpuDeck.cards.concat(warDeck.cards);
         warDeck.cards = [];
     } else if ((cardValues[playerCard.name] === cardValues[cpuCard.name])) {
+        Middle_Row.innerHTML = "🂠🂠🂠🂠🂠🂠";
         warDeck.cards.push(playerCard);
         warDeck.cards.push(cpuCard);
         for (let i = 0; i < 3; i++) {
@@ -99,8 +102,8 @@ function playRound() {
         }
         console.log(warDeck.cards);
     }
+
     Player_Score.innerHTML = playerDeck.numberOfCards;
     CPU_Score.innerHTML = cpuDeck.numberOfCards;
-
 }
 
