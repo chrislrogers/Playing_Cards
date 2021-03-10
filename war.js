@@ -21,8 +21,8 @@ const CPU_Card = document.getElementById('CPU_Card');
 
 const Player_Score = document.getElementById('Player_Score');
 const Player_Card = document.getElementById('Player_Card');
-const button = document.getElementById('clicker');
 
+const button = document.getElementById('clicker');
 const lead = document.getElementById('lead');
 
 let isPlaying = false;
@@ -65,6 +65,17 @@ function playRound() {
     
     Player_Card.innerHTML = playerCard.unicode;
     CPU_Card.innerHTML = cpuCard.unicode;
+    
+    if (playerCard.color === "RED") {
+        Player_Card.style.color = 'red';
+    } else {
+        Player_Card.style.color = 'black';
+    }
+    if (cpuCard.color === "RED") {
+        CPU_Card.style.color = 'red';
+    } else {
+        CPU_Card.style.color = 'black';
+    }
 
 
     if (cardValues[playerCard.name] > cardValues[cpuCard.name]) {
