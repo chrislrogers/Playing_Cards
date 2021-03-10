@@ -105,5 +105,15 @@ function playRound() {
 
     Player_Score.innerHTML = playerDeck.numberOfCards;
     CPU_Score.innerHTML = cpuDeck.numberOfCards;
+    if (playerDeck.numberOfCards === 0) {
+        Middle_Row.innerHTML = "You Lose";
+        button.innerHTML = "Start";
+        isPlaying = false;
+    }
+    if (cpuDeck.numberOfCards === 0) {
+        Middle_Row.innerHTML = "You Win";
+        button.innerHTML = "Start";
+        isPlaying = false;
+    }
 }
 

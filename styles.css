@@ -33,3 +33,6 @@ p {
 .score {
   color: blue;
 }
+#draw {
+  font-size: 75px;
+}
