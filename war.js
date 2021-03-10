@@ -70,21 +70,24 @@ function playRound() {
     if (cardValues[playerCard.name] > cardValues[cpuCard.name]) {
         playerDeck.cards.push(playerCard);
         playerDeck.cards.push(cpuCard);
+        playerDeck.cards = playerDeck.cards.concat(warDeck.cards);
+        warDeck.cards = [];
     } else if (cardValues[playerCard.name] < cardValues[cpuCard.name]) {
         cpuDeck.cards.push(playerCard);
         cpuDeck.cards.push(cpuCard);
+        cpuDeck.cards = cpuDeck.cards.concat(warDeck.cards);
+        warDeck.cards = [];
     } else if ((cardValues[playerCard.name] === cardValues[cpuCard.name])) {
         warDeck.cards.push(playerCard);
         warDeck.cards.push(cpuCard);
-        console.log(warDeck.cards);
         for (let i = 0; i < 3; i++) {
             playerCard = playerDeck.cards.shift();
             cpuCard = cpuDeck.cards.shift();
             warDeck.cards.push(playerCard);
             warDeck.cards.push(cpuCard);
         }
+        console.log(warDeck.cards);
     }
-
     Player_Score.innerHTML = playerDeck.numberOfCards;
     CPU_Score.innerHTML = cpuDeck.numberOfCards;
 
