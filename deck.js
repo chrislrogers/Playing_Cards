@@ -2,8 +2,18 @@ const suits = ['SPADES', 'DIAMONDS', 'HEARTS', 'CLUBS'];
 const values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 
 export default class Deck {
-    constructor(cards) {
-        this.cards = newDeck();
+    constructor() {
+        this.cards = [];
+    }
+
+    newDeck() {
+        for (let i = 0; i < suits.length; i++) {
+            for (let j = 0; j < values.length; j++) {
+                let card = new Card(suits[i], values[j]);
+                this.cards.push(card);
+            }
+        }
+        return this.cards;
     }
 
     get numberOfCards() {
@@ -107,15 +117,4 @@ class Card {
         }
         return String.fromCodePoint(unicode);
     }
-}
-
-function newDeck() {
-    let deck = [];
-    for (let i = 0; i < suits.length; i++) {
-        for (let j = 0; j < values.length; j++) {
-            let card = new Card(suits[i], values[j]);
-            deck.push(card);
-        }
-    }
-    return deck;
-}
+} 

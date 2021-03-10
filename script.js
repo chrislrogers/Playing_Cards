@@ -5,6 +5,7 @@ const name = document.getElementById('name');
 import Deck from "./deck.js";
 
 const deck = new Deck();
+deck.newDeck();
 console.log(deck.cards);
 deck.shuffle();
 
