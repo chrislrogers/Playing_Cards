@@ -105,6 +105,15 @@ function playRound() {
 
     Player_Score.innerHTML = playerDeck.numberOfCards;
     CPU_Score.innerHTML = cpuDeck.numberOfCards;
+    
+    if (playerDeck.numberOfCards > cpuDeck.numberOfCards) {
+        lead.innerHTML = " < ";
+    } else if (cpuDeck.numberOfCards > playerDeck.numberOfCards) {
+        lead.innerHTML = " > ";
+    } else {
+        lead.innerHTML = " = ";
+    }
+    
     if (playerDeck.numberOfCards === 0) {
         Middle_Row.innerHTML = "You Lose";
         button.innerHTML = "Start";
