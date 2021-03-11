@@ -30,7 +30,7 @@ let isPlaying = false;
 let playerDeck, cpuDeck, warDeck;
 
 window.advance = () => {
-    if(!isPlaying) {
+    if (!isPlaying) {
         start();
     } else {
         playRound();
@@ -42,17 +42,17 @@ function start() {
     deck.newDeck();
     deck.shuffle();
     console.log(deck.cards);
-    
+
     const half = deck.numberOfCards / 2;
     playerDeck = new Deck(deck.cards.slice(0, half));
     cpuDeck = new Deck(deck.cards.slice(half, deck.numberOfCards));
     warDeck = new Deck(); //stores the disputed cards in event of war
-    
+
     console.log(playerDeck.cards);
     console.log(cpuDeck.cards);
-    
+
     button.innerHTML = "Next Move";
-    
+
     isPlaying = true;
 }
 
@@ -60,10 +60,10 @@ function playRound() {
     let playerCard = playerDeck.cards.shift();
     let cpuCard = cpuDeck.cards.shift();
     let warCard;
-    
+
     //console.log(cpuCard);
     //console.log(playerCard);
-    
+
     Player_Card.innerHTML = playerCard.unicode;
     CPU_Card.innerHTML = cpuCard.unicode;
     Middle_Row.innerHTML = "&nbsp;";
